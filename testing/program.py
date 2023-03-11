@@ -21,7 +21,7 @@ header = Label(canvas, text="KNN APP", bg="white" ,fg="black", font="Inter 36 bo
 body = PhotoImage(file="assets/pic/form.png")
 canvas.create_image(800, 280, image=body)
 form_header = canvas.create_text(875, 55, text="INPUT", font="Inter 30 bold", fill="white")
-K = canvas.create_text(700, 130, text="SEX", font="Inter 30 bold", fill="white")
+K = canvas.create_text(700, 130, text="K", font="Inter 30 bold", fill="white")
 SEX = canvas.create_text(705, 190, text="AGE", font="Inter 30 bold", fill="white")
 WEIGHT = canvas.create_text(730, 260, text="WEIGHT", font="Inter 30 bold", fill="white")
 HEIGHT = canvas.create_text(730, 320, text="HEIGHT", font="Inter 30 bold", fill="white")
@@ -30,7 +30,7 @@ table = PhotoImage(file="assets/pic/table.png")
 canvas.create_image(300,235, image=table)
 # Input state
 Input_image_box = PhotoImage(file="assets/pic/input.png")
-k = StringVar()
+k = IntVar()
 canvas.create_image(895, 120, image=Input_image_box)
 input_k = Entry(canvas, width=5, font="Inter 24 bold", border=0, textvariable=k).place(x=845, y=100)
 
@@ -60,15 +60,11 @@ out_put = Label(canvas, width=7, font="Inter 24 bold", background="#ECF4E8", bor
 
 def calling_KNN():
     K = k.get()
-    if (K == "male" or "Male"):
-        K = 1
-    elif (K == "female" or "Female"):
-        K = 0
     SEX = sex.get()
     WEIGHT = weight.get()
     HEIGHT = height.get()
     
-    result = KNN.knn([K, SEX, WEIGHT, HEIGHT])
+    result = KNN.knn(K,SEX, WEIGHT, HEIGHT)
     txt.set(result)
     return result
 
