@@ -32,7 +32,7 @@ def plotting(train, cols, target, knn):
         train[1], 
         train[2], 
         c=train['body'].map(colors))
-    plt.scatter(target[1], target[2], c='pink', s=100)
+    plt.scatter(target[1], target[2], c='black', s=100)
     plt.xlabel(cols[1])
     plt.ylabel(cols[2])
     plt.title('Body Scatter Plot : ' + knn)
