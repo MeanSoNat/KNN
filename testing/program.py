@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 import KNN
 
 root = Tk()
-root.title('KNN Nattaphon & Apiwich')
+root.title('KNN Nattaphon & Apiwich & Atid')
 root.resizable(width=False, height=False)
 frame = Frame(root)
 frame.pack()
