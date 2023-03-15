@@ -2,8 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from statistics import mode
+
 def knn(k_value,age, weight, height):
     train = pd.read_csv('MOCK_DATA.csv')
+    print(train)
     # read data from file
     train = train.drop('id', 1)
     # drop id header
@@ -31,3 +33,5 @@ def plotting(train, cols, target):
     plt.xlabel(cols[1])
     plt.ylabel(cols[2])
     plt.title('Body Scatter Plot')
+
+# knn(3,30, 60, 180)
